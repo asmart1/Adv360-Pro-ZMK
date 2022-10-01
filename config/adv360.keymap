@@ -19,20 +19,6 @@
 #include <dt-bindings/zmk/backlight.h>
 
 / {
-  behaviors {
-    #include "macros.dtsi"
-
-    hm: homerow_mods {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MODS";
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick_tap_ms = <175>;
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
-    };
-  };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -59,11 +45,11 @@
 
         layer_fn {
             bindings = <
- &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6            &tog 1   &mo 3  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
- &trans  &trans  &trans  &trans  &trans  &trans             &none   &none  &trans  &trans  &trans   &trans   &trans   &trans
- &trans  &trans  &trans  &trans  &trans  &trans             &none  &trans  &trans                   &trans   &trans    &none  &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans             &none   &none  &trans   &none   &none   &trans    &none    &none  &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans   &trans   &trans   &trans  &trans  &trans
+ &kp F1  &kp F2  &kp F3          &kp F4      &kp F5        &kp F6               &tog 1    &mo 3  &kp F7  &kp F8  &kp F9       &kp F10       &kp F11     &kp F12
+ &trans  &trans  &trans          &trans      &trans  &kp C_AC_NEW                &none    &none  &trans  &trans  &trans        &trans        &trans      &trans
+ &trans  &trans  &trans          &trans      &trans        &trans                &none   &trans  &trans                        &trans        &trans       &none  &trans  &trans  &trans  &trans  &trans  &trans
+ &trans  &trans  &trans          &trans      &trans        &trans                &none    &none  &trans   &none   &none        &trans         &none       &none  &trans  &trans  &trans  &trans  &trans  &trans
+ &trans  &trans  &trans  &kp C_PREVIOUS  &kp C_NEXT     &kp SPACE            &kp ENTER  &kp ESC  &trans  &trans  &trans  &kp C_VOL_UP  &kp C_VOL_DN  &kp K_MUTE  &trans  &trans
             >;
         };
 
